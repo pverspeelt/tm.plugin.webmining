@@ -81,7 +81,7 @@ function(x) {
 #' @description Google Finance provides business and enterprise headlines for many companies. Coverage is 
 #' particularly strong for US-Markets. However, only up to 20 feed items can be retrieved.
 #' @author Mario Annau
-#' @param query ticker symbols of companies to be searched for, see \url{http://www.google.com/finance}.
+#' @param query ticker symbols of companies to be searched for, see \url{http://finance.google.com/finance}.
 #' Please note that Google ticker symbols need to be prefixed with the exchange name, e.g. NASDAQ:MSFT
 #' @param params additional query parameters
 #' @param ... additional parameters to \code{\link{WebSource}}
@@ -104,7 +104,7 @@ GoogleFinanceSource <- function(query, params =
 						start = 0, 
 						num = 20, 
 						output='rss'),...){
-	feed <- "http://www.google.com/finance/company_news"
+	feed <- "http://finance.google.com/finance/company_news"
 	parser <- function(cr){
 		tree <- parse(cr, type = "XML", asText = FALSE)
 		xpathSApply(tree, path = "//item")
